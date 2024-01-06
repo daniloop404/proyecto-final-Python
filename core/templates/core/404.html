@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+{% block title %}404{% endblock %}
+{% block header_Title %}404{% endblock %}
+{% block content %}
+{% load static %}
+
+    <!-- 404 Comienzo -->
+    <div class="container-xxl py-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
+                    <h1 class="display-1">404</h1>
+                    <h1 class="mb-4">Página no encontrada</h1>
+                    <p class="mb-4">Lo sentimos, la página que has buscado no existe en nuestro sitio web. ¿Quizás ir a nuestra página de inicio o intentar usar una búsqueda?</p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5" href="/">Volver a la Página de Inicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 404 Fin -->
+{% endblock %}
