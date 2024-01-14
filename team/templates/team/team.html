@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+{% block title %}Equipo{% endblock %}
+{% block header_Title %}Equipo{% endblock %}
+{% block content %}
+{% load static %}
+
+<!-- Equipo Comienzo -->
+<div class="container-xxl py-6">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="text-primary text-uppercase mb-2">// Nuestro Equipo</p>
+            <h1 class="display-6 mb-4">Somos Super Profesionales en Nuestras Habilidades</h1>
+        </div>
+        <div class="row g-4">
+            {% for member in members %}
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="{{ forloop.counter|divisibleby:2|yesno:'0.3s,0.1s' }}">
+                <div class="team-item text-center rounded overflow-hidden">
+                    <img class="img-fluid" src="{{ member.image.url }}" alt="{{ member.name }}">
+                    <div class="team-text">
+                        <div class="team-title">
+                            <h5>{{ member.name }}</h5>
+                            <span>{{ member.role }}</span>
+                        </div>
+                        <div class="team-social">
+                            {% for social_link in member.social_links.all %}
+                            <a class="btn btn-square btn-light rounded-circle" href="{{ social_link.link }}" target="_blank">
+                                <i class="fab fa-{{ social_link.name|lower }}"></i>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Equipo Fin -->
+{% endblock %}

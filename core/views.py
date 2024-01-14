@@ -14,12 +14,6 @@ def contact(request):
 def product(request):
     return render(request, 'core/product.html')
 
-def service(request):
-    return render(request, 'core/service.html')
-
-def team(request):
-    return render(request, 'core/team.html')
-
 def testimonial(request):
     return render(request, 'core/testimonial.html')
 
