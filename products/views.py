@@ -14,4 +14,6 @@ def category_products(request, category_id=None):
 
 def product_details(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-    return render(request, 'products/product_detail.html', {'product': product})
+    # Fetch other products related to the same category
+    products = Product.objects.filter(category=product.category).exclude(pk=product_id)
+    return render(request, 'products/product_detail.html', {'product': product, 'products': products})
