@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+{% block title %}Productos de {{ category.name }}{% endblock %}
+{% block header_Title %}Productos de {{ category.name }}{% endblock %}
+{% block content %}
+{% load static %}
+
+<!-- Product Details Comienzo -->
+<div class="container-xxl bg-light my-6 py-6 pt-0" style="margin: 12rem 0;">
+    <div class="container">
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.description }}</p>
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid mb-4">
+        <h2>Productos en esta categoría:</h2>
+        <div class="row g-4">
+            {% for product in products %}
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <!-- Display product information as needed -->
+                    <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+                        <div class="text-center p-4">
+                            <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">{{ product.price_range }}</div>
+                            <h3 class="mb-3">{{ product.name }}</h3>
+                            <span>{{ product.description }}</span>
+                        </div>
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            <div class="product-overlay">
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href="{% url 'product_details' product_id=product.id %}">
+                                    <i class="fa fa-eye text-primary"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Product Details Fin -->
+{% endblock %}

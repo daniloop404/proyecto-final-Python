@@ -1,0 +1,32 @@
+{% extends "core/base.html" %}
+{% block title %}Productos{% endblock %}
+{% block header_Title %}Productos{% endblock %}
+{% block content %}
+{% load static %}
+
+<!-- Category Products Comienzo -->
+<div class="container-xxl bg-light my-6 py-6 pt-0" style="margin: 12rem 0;">
+   <!-- product.html -->
+<div class="container">
+    <h1>Nuesta seleccion de productos</h1>
+    <div class="row g-4">
+        {% for category in categories %}
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <a href="{% url 'product_details' product_id=category.id %}">
+                    <div class="category-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+                        <div class="text-center p-4">
+                            <h3 class="mb-3">{{ category.name }}</h3>
+                            <span>{{ category.description }}</span>
+                        </div>
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid" src="{{ category.image.url }}" alt="{{ category.name }}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+<!-- Category Products Fin -->
+{% endblock %}

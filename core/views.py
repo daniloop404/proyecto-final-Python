@@ -11,9 +11,6 @@ def about(request):
 def contact(request):
     return render(request, 'core/contact.html')
 
-def product(request):
-    return render(request, 'core/product.html')
-
 def testimonial(request):
     return render(request, 'core/testimonial.html')
 

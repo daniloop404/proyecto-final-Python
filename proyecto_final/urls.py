@@ -23,11 +23,12 @@ urlpatterns = [
     path("about/", core_views.about, name="about"),
     path("contact/", core_views.contact, name="contact"),
     path("service/", include('service.urls')),
-    path("product/", core_views.product, name="product"),
+    path("product/", include('products.urls')),
     path("team/", include('team.urls')),
     path("testimonial/", core_views.testimonial, name="testimonial"),
     path("admin/", admin.site.urls),
 ]
+
 if settings.DEBUG:
     from django.conf.urls.static import static
     urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
