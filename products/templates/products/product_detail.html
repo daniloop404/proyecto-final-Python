@@ -1,15 +1,12 @@
 {% extends "core/base.html" %}
-{% block title %}Productos de {{ category.name }}{% endblock %}
-{% block header_Title %}Productos de {{ category.name }}{% endblock %}
+{% block title %}{{ category.name }}{% endblock %}
+{% block header_Title %} {{ category.name }}{% endblock %}
 {% block content %}
 {% load static %}
 
 <!-- Product Details Comienzo -->
 <div class="container-xxl bg-light my-6 py-6 pt-0" style="margin: 12rem 0;">
     <div class="container">
-        <h1>{{ product.name }}</h1>
-        <p>{{ product.description }}</p>
-        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid mb-4">
         <h2>Productos en esta categoría:</h2>
         <div class="row g-4">
             {% for related_product in products %}
@@ -25,7 +22,7 @@
                         <div class="position-relative mt-auto">
                             <img class="img-fluid" src="{{ related_product.image.url }}" alt="{{ related_product.name }}">
                             <div class="product-overlay">
-                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href="{% url 'product_details' product_id=related_product.id %}">
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href="#">
                                     <i class="fa fa-eye text-primary"></i>
                                 </a>
                             </div>

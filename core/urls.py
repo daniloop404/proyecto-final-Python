@@ -5,6 +5,5 @@ urlpatterns = [
     path("", core_views.home, name="home"),
     path("about/", core_views.about, name="about"),
     path("contact/", core_views.contact, name="contact"),
-    path("testimonial/", core_views.testimonial, name="testimonial"),
     path("admin/", admin.site.urls),
 ]

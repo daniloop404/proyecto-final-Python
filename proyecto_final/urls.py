@@ -20,12 +20,12 @@ from core import views as core_views
 from django.conf import settings
 urlpatterns = [
     path("", core_views.home, name="home"),
-    path("about/", core_views.about, name="about"),
+    path("about/", include('about.urls')),
     path("contact/", core_views.contact, name="contact"),
     path("service/", include('service.urls')),
     path("product/", include('products.urls')),
     path("team/", include('team.urls')),
-    path("testimonial/", core_views.testimonial, name="testimonial"),
+    path("testimonial/", include('testimonial.urls')),
     path("admin/", admin.site.urls),
 ]
 
