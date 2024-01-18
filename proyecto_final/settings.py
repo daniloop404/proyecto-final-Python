@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "products",
     "testimonial",
     "about",
+    "social",
     'ckeditor',
 ]
 
@@ -69,6 +70,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "social.processors.ctx_dict"
             ],
         },
     },
