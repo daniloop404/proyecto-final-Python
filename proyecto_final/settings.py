@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "testimonial",
     "about",
     "social",
+    "contact",
     'ckeditor',
 ]
 
@@ -132,3 +133,9 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Config Email
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'efd7b3308e9650'
+EMAIL_HOST_PASSWORD = '4ff6af33f9150d'
+EMAIL_PORT = '2525'
